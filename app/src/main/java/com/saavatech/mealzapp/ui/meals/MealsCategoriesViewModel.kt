@@ -17,9 +17,6 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
 class MealsCategoriesViewModel(private val repository: MealsRepository = MealsRepository()): ViewModel() {
-//    fun getMeals(successCallback: (response: MealsCategoriesResponse?)-> Unit){
-//       repository.getMeals{ response -> successCallback(response)  }
-//    }
     private val mealsJob = Job()
 
     init {
@@ -27,7 +24,6 @@ class MealsCategoriesViewModel(private val repository: MealsRepository = MealsRe
                 val meals = getMeals()
                 mealsState.value = meals
             }
-
     }
 
     val mealsState: MutableState<List<MealResponse>> =
